@@ -11,7 +11,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
     case TERMOPEN:
         if (record->event.pressed) {
-            // when keycode QMKBEST is pressed
             SEND_STRING(SS_DOWN(X_LCTL)SS_DOWN(X_LSFT)SS_DOWN(X_ZKHK));
         } else {
             SEND_STRING(SS_UP(X_LCTL)SS_UP(X_LSFT)SS_UP(X_ZKHK));
@@ -19,7 +18,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         break;
     case OPENCOVERAGE:
         if (record->event.pressed) {
-            // when keycode QMKBEST is pressed
             SEND_STRING(SS_DOWN(X_LCTL) SS_DOWN(X_LSFT) SS_DOWN(X_ZKHK) SS_UP(X_LCTL) SS_UP(X_LSFT) SS_UP(X_ZKHK) SS_DELAY(300) "open ~/Sites/When-I-Work/wheniwork-js/reports/coverage/lcov-report/index.html" SS_TAP(X_ENTER));
         }
         break;
@@ -44,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  RESET,    _______,
     _______,  RGB_TOG,  RGB_MOD,  RGB_HUI,  RGB_HUD,  RGB_SAI,  RGB_SAD,  RGB_VAI,  RGB_VAD,  _______,  _______,  _______,  _______,  _______,            _______,
     _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,                      _______,  _______,
-    _______,  _______,  _______,  _______,  BL_DEC,   BL_TOGG,  BL_INC,   BL_STEP,  _______,  _______,  _______,  _______,  _______,            _______,  _______,
+    _______,  _______,  _______,  _______,  BL_DEC,   BL_TOGG,  BL_INC,   BL_STEP,  _______,  _______,  _______,  CG_TOGG,  _______,            _______,  _______,
     _______,  _______,  _______,                      _______,  _______,  _______,                      _______,  _______,  _______,  _______,  _______,  _______
   ),
 };
